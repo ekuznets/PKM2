@@ -324,12 +324,12 @@ void LEnc_MonstersLoginCorrectParams(ref location, aref chr, string group, strin
 	{
 	case "bandit":
 		isSet = true;
-		LAi_NPC_Equip(chr, mchr_rank - 3, true, true);
+		LAi_NPC_Equip(chr, mchr_rank, true, true);
 		break;
 	case "skeleton":
 		isSet = true;
 		chr.sex = "skeleton";
-		LAi_NPC_Equip(chr, mchr_rank - 2, true, false);
+		LAi_NPC_Equip(chr, mchr_rank, true, true);
 		break;
 	case "monkey":
 		isSet = true;
@@ -356,12 +356,12 @@ void LEnc_MonstersLoginCorrectParams(ref location, aref chr, string group, strin
 		SetRandomNameToCharacter(chr);
 		break;
 	}
-	if(LEnc_MonstersLoginObject.type == "inca_temple")
-	{
-		float maxhp = LAi_GetCharacterMaxHP(chr);
-		maxhp = maxhp*0.5;
-		LAi_SetHP(chr, maxhp, maxhp);
-	}
+//	if(LEnc_MonstersLoginObject.type == "inca_temple")
+//	{
+//		float maxhp = LAi_GetCharacterMaxHP(chr);
+//		maxhp = maxhp*0.5;
+//		LAi_SetHP(chr, maxhp, maxhp);
+//	}
 }
 
 //«авершить загрузку монстров в локацию

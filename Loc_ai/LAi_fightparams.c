@@ -207,7 +207,15 @@ float LAi_CalcDeadExp(aref attack, aref enemy)
 
 	//KE: simple formula (max health) * (enemy rank) / y(our rank)
 	//KE: rewarding to kill a next level opponent but less for your level
-	return LAi_GetCharacterMaxHP(enemy) * re / ra;
+
+	float multiple = 1.0;
+
+	if(re > ra) //KE if kill and higher rank enemy then you will get bonus
+    {
+        multiple = re - ra + 1;
+    }
+
+	return LAi_GetCharacterMaxHP(enemy) * multiple;
 }
 
 //--------------------------------------------------------------------------------
@@ -308,7 +316,7 @@ void LAi_ApplyCharacterBladeDamage(aref attack, aref enemy, float attackDmg, flo
 	kDmg = 1.0;
 	if(IsCharacterPerkOn(enemy, "BasicDefense")) kDmg = 0.9;
 	if(IsCharacterPerkOn(enemy, "AdvancedDefense")) kDmg = 0.8;
-	if(IsCharacterPerkOn(enemy, "SwordplayProfessional")) kDmg = 0.6;
+	if(IsCharacterPerkOn(enemy, "SwordplayProfessional")) kDmg = 0.7;
 	dmg = dmg*kDmg;
 	float damage = LAi_BladeApplySkills(attack, enemy, dmg);
 	if(isBlocked)
@@ -422,7 +430,7 @@ float LAi_NPC_GetAttackDefence()
 {
 	aref chr = GetEventData();
 	float level = LAi_GetCharacterFightLevel(chr);
-	npc_return_tmp = 0.008 + level*0.08;
+	npc_return_tmp = 0.2 + level*0.4;
 	return npc_return_tmp;
 }
 
@@ -440,7 +448,7 @@ float LAi_NPC_GetFireActive()
 {
 	aref chr = GetEventData();
 	float level = LAi_GetCharacterFightLevel(chr);
-	npc_return_tmp = 0.001 + level*0.06;
+	npc_return_tmp = 0.1 + level*0.05;
 	return npc_return_tmp;
 }
 

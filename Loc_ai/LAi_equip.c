@@ -4,11 +4,15 @@
 void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 {
 	int r = rank;
-	if(r < 1) r = 1;
-	chr.rank = r;
-	r = rank + rand(3) - 1;
+	//if(r < 1) r = 1;
+	//chr.rank = r;
+	r = rank + rand(5) - 2;
+    if(r < 1) r = 1;
 	if(r <= 0) return;
 	if(r > 15) r = 15;
+
+	// rank is based on random
+    chr.rank = r;
 	//Подберём саблю
 	if(isWeapons)
 	{
@@ -22,137 +26,164 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 	switch(r)
 	{
 	case 1:
+	    //KE: level 1:
+	    // No skills or guns
+
 		//-------------------------------------
-		if(rand(100) < 10)
-		{
-			chr.perks.list.BasicDefense = "1";
-		}
+//		if(rand(100) < 10)
+//		{
+//			chr.perks.list.BasicDefense = "1";
+//		}
 		break;
 	case 2:
 		//-------------------------------------
 		if(isGun)
 		{
-			if(rand(1000) < 5)
+			if(rand(100) < 20)
 			{
 				GiveItem2Character(chr, "pistol1");
 				EquipCharacterByItem(chr, "pistol1");
 			}
 		}
+
+		//KE: level 2:
+		// basic defence only
+		chr.perks.list.BasicDefense = "1";
+
 		//-------------------------------------
-		if(rand(100) < 30)
-		{
-			chr.perks.list.BasicDefense = "1";
-		}
-		if(rand(100) < 10)
-		{
-			chr.perks.list.CriticalHit = "1";
-		}
+//		if(rand(100) < 30)
+//		{
+//			chr.perks.list.BasicDefense = "1";
+//		}
+//		if(rand(100) < 10)
+//		{
+//			chr.perks.list.CriticalHit = "1";
+//		}
 		break;
 	case 3:
 		//-------------------------------------
 		if(isGun)
 		{
-			if(rand(1000) < 10)
+			if(rand(100) < 30)
 			{
 				GiveItem2Character(chr, "pistol1");
 				EquipCharacterByItem(chr, "pistol1");
 			}
 		}
+
+		//KE: level 3:
+		// basic defence + critical hit
+		chr.perks.list.BasicDefense = "1";
+		chr.perks.list.CriticalHit = "1";
+
 		//-------------------------------------
-		if(rand(100) < 60)
-		{
-			chr.perks.list.BasicDefense = "1";
-		}
-		if(rand(100) < 10)
-		{
-			chr.perks.list.BasicDefense = "1";
-			chr.perks.list.AdvancedDefense = "1";
-		}
-		if(rand(100) < 10)
-		{
-			chr.perks.list.CriticalHit = "1";
-		}
+//		if(rand(100) < 60)
+//		{
+//			chr.perks.list.BasicDefense = "1";
+//		}
+//		if(rand(100) < 10)
+//		{
+//			chr.perks.list.BasicDefense = "1";
+//			chr.perks.list.AdvancedDefense = "1";
+//		}
+//		if(rand(100) < 10)
+//		{
+//			chr.perks.list.CriticalHit = "1";
+//		}
 		break;
 	case 4:
 		//-------------------------------------
 		if(isGun)
 		{
-			if(rand(1000) < 20)
+			if(rand(100) < 40)
 			{
 				GiveItem2Character(chr, "pistol1");
 				EquipCharacterByItem(chr, "pistol1");
 			}
 		}
+		//KE: level 4:
+		// basic defence + critical hit + advanced defence
+		chr.perks.list.BasicDefense = "1";
+		chr.perks.list.CriticalHit = "1";
+		chr.perks.list.AdvancedDefense = "1";
+
 		//-------------------------------------
-		if(rand(100) < 30)
-		{
-			chr.perks.list.CriticalHit = "1";
-		}
-		if(rand(100) < 80)
-		{
-			chr.perks.list.BasicDefense = "1";
-		}
-		if(rand(100) < 30)
-		{
-			chr.perks.list.BasicDefense = "1";
-			chr.perks.list.AdvancedDefense = "1";
-		}
-		if(rand(100) < 3)
-		{
-			chr.perks.list.BasicDefense = "1";
-			chr.perks.list.AdvancedDefense = "1";
-			chr.perks.list.SwordplayProfessional = "1";
-		}
-		if(rand(100) < 20)
-		{
-			chr.perks.list.Gunman = "1";
-		}
-		if(rand(100) < 10)
-		{
-			chr.perks.list.GunProfessional = "1";
-		}
+//		if(rand(100) < 30)
+//		{
+//			chr.perks.list.CriticalHit = "1";
+//		}
+//		if(rand(100) < 80)
+//		{
+//			chr.perks.list.BasicDefense = "1";
+//		}
+//		if(rand(100) < 30)
+//		{
+//			chr.perks.list.BasicDefense = "1";
+//			chr.perks.list.AdvancedDefense = "1";
+//		}
+//		if(rand(100) < 3)
+//		{
+//			chr.perks.list.BasicDefense = "1";
+//			chr.perks.list.AdvancedDefense = "1";
+//			chr.perks.list.SwordplayProfessional = "1";
+//		}
+//		if(rand(100) < 20)
+//		{
+//			chr.perks.list.Gunman = "1";
+//		}
+//		if(rand(100) < 10)
+//		{
+//			chr.perks.list.GunProfessional = "1";
+//		}
 		break;
 	case 5:
 		//-------------------------------------
 		if(isGun)
 		{
-			if(rand(1000) < 30)
+			if(rand(100) < 50)
 			{
 				GiveItem2Character(chr, "pistol2");
 				EquipCharacterByItem(chr, "pistol2");
 			}
 		}
-		//-------------------------------------
-		if(rand(100) < 50)
-		{
-			chr.perks.list.CriticalHit = "1";
-		}
+		//KE: level 5:
+		// all have basic defence + critical hit + advanced defence + gunman
 		chr.perks.list.BasicDefense = "1";
-		if(rand(100) < 80)
-		{
-			chr.perks.list.AdvancedDefense = "1";
-		}
-		if(rand(100) < 20)
-		{
-			chr.perks.list.AdvancedDefense = "1";
-			chr.perks.list.SwordplayProfessional = "1";
-		}
-		if(rand(100) < 80)
-		{
-			chr.perks.list.Gunman = "1";
-		}
-		if(rand(100) < 30)
-		{
-			chr.perks.list.GunProfessional = "1";
-		}
+		chr.perks.list.CriticalHit = "1";
+		chr.perks.list.AdvancedDefense = "1";
+		chr.perks.list.Gunman = "1";
+
+		//-------------------------------------
+//		if(rand(100) < 50)
+//		{
+//			chr.perks.list.CriticalHit = "1";
+//		}
+//		chr.perks.list.BasicDefense = "1";
+//		if(rand(100) < 80)
+//		{
+//			chr.perks.list.AdvancedDefense = "1";
+//		}
+//		if(rand(100) < 20)
+//		{
+//			chr.perks.list.AdvancedDefense = "1";
+//			chr.perks.list.SwordplayProfessional = "1";
+//		}
+//		if(rand(100) < 80)
+//		{
+//			chr.perks.list.Gunman = "1";
+//		}
+//		if(rand(100) < 30)
+//		{
+//			chr.perks.list.GunProfessional = "1";
+//		}
 		break;
 	case 6:
 		//-------------------------------------
 		if(isGun)
 		{
-			if(rand(1000) < 50)
+			if(rand(100) < 60)
 			{
-				if(rand(100) < 80)
+				if(rand(100) < 75)
 				{
 					GiveItem2Character(chr, "pistol2");
 					EquipCharacterByItem(chr, "pistol2");
@@ -162,28 +193,37 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 				}
 			}
 		}
-		//-------------------------------------
-		if(rand(100) < 80)
-		{
-			chr.perks.list.CriticalHit = "1";
-		}
+
+		//KE: level 6:
+		// all have basic defence + critical hit + advanced defence + gunman + professional fencing
 		chr.perks.list.BasicDefense = "1";
+		chr.perks.list.CriticalHit = "1";
 		chr.perks.list.AdvancedDefense = "1";
 		chr.perks.list.Gunman = "1";
-		if(rand(100) < 50)
-		{
-			chr.perks.list.SwordplayProfessional = "1";
-		}
-		if(rand(100) < 50)
-		{
-			chr.perks.list.GunProfessional = "1";
-		}
+		chr.perks.list.SwordplayProfessional = "1";
+
+		//-------------------------------------
+//		if(rand(100) < 80)
+//		{
+//			chr.perks.list.CriticalHit = "1";
+//		}
+//		chr.perks.list.BasicDefense = "1";
+//		chr.perks.list.AdvancedDefense = "1";
+//		chr.perks.list.Gunman = "1";
+//		if(rand(100) < 50)
+//		{
+//			chr.perks.list.SwordplayProfessional = "1";
+//		}
+//		if(rand(100) < 50)
+//		{
+//			chr.perks.list.GunProfessional = "1";
+//		}
 		break;
 	case 7:
 		//-------------------------------------
 		if(isGun)
 		{
-			if(rand(1000) < 60)
+			if(rand(100) < 70)
 			{
 				if(rand(100) < 60)
 				{
@@ -195,25 +235,34 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 				}
 			}
 		}
-		//-------------------------------------
-		chr.perks.list.CriticalHit = "1";
+		//KE: level 7:
+		// all have basic defence + critical hit + advanced defence + gunman + professional fencing + sniper
 		chr.perks.list.BasicDefense = "1";
+		chr.perks.list.CriticalHit = "1";
 		chr.perks.list.AdvancedDefense = "1";
 		chr.perks.list.Gunman = "1";
-		if(rand(100) < 80)
-		{
-			chr.perks.list.SwordplayProfessional = "1";
-		}
-		if(rand(100) < 80)
-		{
-			chr.perks.list.GunProfessional = "1";
-		}
+		chr.perks.list.SwordplayProfessional = "1";
+		chr.perks.list.GunProfessional = "1";
+
+		//-------------------------------------
+//		chr.perks.list.CriticalHit = "1";
+//		chr.perks.list.BasicDefense = "1";
+//		chr.perks.list.AdvancedDefense = "1";
+//		chr.perks.list.Gunman = "1";
+//		if(rand(100) < 80)
+//		{
+//			chr.perks.list.SwordplayProfessional = "1";
+//		}
+//		if(rand(100) < 80)
+//		{
+//			chr.perks.list.GunProfessional = "1";
+//		}
 		break;
 	case 8:
 		//-------------------------------------
 		if(isGun)
 		{
-			if(rand(1000) < 80)
+			if(rand(100) < 80)
 			{
 				if(rand(100) < 60)
 				{
@@ -225,25 +274,34 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 				}
 			}
 		}
-		//-------------------------------------
-		chr.perks.list.CriticalHit = "1";
+		//KE: level 8:
+		// all have basic defence + critical hit + advanced defence + gunman + professional fencing + sniper + Rush
 		chr.perks.list.BasicDefense = "1";
+		chr.perks.list.CriticalHit = "1";
 		chr.perks.list.AdvancedDefense = "1";
 		chr.perks.list.Gunman = "1";
-		if(rand(100) < 90)
-		{
-			chr.perks.list.SwordplayProfessional = "1";
-		}
-		if(rand(100) < 90)
-		{
-			chr.perks.list.GunProfessional = "1";
-		}
+		chr.perks.list.SwordplayProfessional = "1";
+		chr.perks.list.GunProfessional = "1";
+		chr.perks.list.Rush = "1";
+		//-------------------------------------
+//		chr.perks.list.CriticalHit = "1";
+//		chr.perks.list.BasicDefense = "1";
+//		chr.perks.list.AdvancedDefense = "1";
+//		chr.perks.list.Gunman = "1";
+//		if(rand(100) < 90)
+//		{
+//			chr.perks.list.SwordplayProfessional = "1";
+//		}
+//		if(rand(100) < 90)
+//		{
+//			chr.perks.list.GunProfessional = "1";
+//		}
 		break;
 	case 9:
 		//-------------------------------------
 		if(isGun)
 		{
-			if(rand(1000) < 100)
+			if(rand(100) < 90)
 			{
 				if(rand(100) < 40)
 				{
@@ -261,19 +319,29 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 				}
 			}
 		}
-		//-------------------------------------
-		chr.perks.list.CriticalHit = "1";
+		//KE: level 9+ all have all perks open:
+		// all have basic defence + critical hit + advanced defence + gunman + professional fencing + sniper + Rush
 		chr.perks.list.BasicDefense = "1";
+		chr.perks.list.CriticalHit = "1";
 		chr.perks.list.AdvancedDefense = "1";
 		chr.perks.list.Gunman = "1";
 		chr.perks.list.SwordplayProfessional = "1";
 		chr.perks.list.GunProfessional = "1";
+		chr.perks.list.Rush = "1";
+
+		//-------------------------------------
+//		chr.perks.list.CriticalHit = "1";
+//		chr.perks.list.BasicDefense = "1";
+//		chr.perks.list.AdvancedDefense = "1";
+//		chr.perks.list.Gunman = "1";
+//		chr.perks.list.SwordplayProfessional = "1";
+//		chr.perks.list.GunProfessional = "1";
 		break;
 	case 10:
 		//-------------------------------------
 		if(isGun)
 		{
-			if(rand(1000) < 200)
+			if(rand(100) < 100)
 			{
 				if(rand(100) < 60)
 				{
@@ -298,12 +366,13 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 		chr.perks.list.Gunman = "1";
 		chr.perks.list.SwordplayProfessional = "1";
 		chr.perks.list.GunProfessional = "1";
+		chr.perks.list.Rush = "1";
 		break;
 	case 11:
 		//-------------------------------------
 		if(isGun)
 		{
-			if(rand(1000) < 300)
+			if(rand(100) < 100)
 			{
 				if(rand(100) < 60)
 				{
@@ -328,12 +397,13 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 		chr.perks.list.Gunman = "1";
 		chr.perks.list.SwordplayProfessional = "1";
 		chr.perks.list.GunProfessional = "1";
+		chr.perks.list.Rush = "1";
 		break;
 	case 12:
 		//-------------------------------------
 		if(isGun)
 		{
-			if(rand(1000) < 400)
+			if(rand(100) < 100)
 			{
 				if(rand(100) < 60)
 				{
@@ -358,12 +428,13 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 		chr.perks.list.Gunman = "1";
 		chr.perks.list.SwordplayProfessional = "1";
 		chr.perks.list.GunProfessional = "1";
+		chr.perks.list.Rush = "1";
 		break;
 	case 13:
 		//-------------------------------------
 		if(isGun)
 		{
-			if(rand(1000) < 500)
+			if(rand(100) < 100)
 			{
 				if(rand(100) < 60)
 				{
@@ -388,12 +459,13 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 		chr.perks.list.Gunman = "1";
 		chr.perks.list.SwordplayProfessional = "1";
 		chr.perks.list.GunProfessional = "1";
+		chr.perks.list.Rush = "1";
 		break;
 	case 14:
 		//-------------------------------------
 		if(isGun)
 		{
-			if(rand(1000) < 600)
+			if(rand(100) < 100)
 			{
 				if(rand(100) < 60)
 				{
@@ -418,12 +490,13 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 		chr.perks.list.Gunman = "1";
 		chr.perks.list.SwordplayProfessional = "1";
 		chr.perks.list.GunProfessional = "1";
+		chr.perks.list.Rush = "1";
 		break;
 	case 15:
 		//-------------------------------------
 		if(isGun)
 		{
-			if(rand(1000) < 700)
+			if(rand(100) < 100)
 			{
 				if(rand(100) < 60)
 				{
@@ -448,6 +521,7 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 		chr.perks.list.Gunman = "1";
 		chr.perks.list.SwordplayProfessional = "1";
 		chr.perks.list.GunProfessional = "1";
+		chr.perks.list.Rush = "1";
 		break;
 	}
 }
