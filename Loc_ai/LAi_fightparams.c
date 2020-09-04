@@ -72,16 +72,34 @@ float LAi_BladeFindPiercingProbability(aref attack, aref enemy, float hitDmg)
 	{
 		block = stf(enemy.chr_ai.block);
 	}
-	float aSkill = LAi_GetCharacterFightLevel(attack);
-	float eSkill = LAi_GetCharacterFightLevel(enemy);
 
-	if(aSkill < eSkill) aSkill = eSkill;
-	float p = piercing - block + (aSkill - eSkill)*0.5;
-	float k = 1.0;
-	if(IsCharacterPerkOn(enemy, "BasicDefense")) k = 0.75;
-	if(IsCharacterPerkOn(enemy, "AdvancedDefense")) k = 0.5;
-	hitDmg = hitDmg*0.5 + 0.5;
-	p = p*k*hitDmg*hitDmg;
+
+    if(IsCharacterPerkOn(enemy, "BasicDefense")) block += 0.15;
+    if(IsCharacterPerkOn(enemy, "AdvancedDefense")) block += 0.3;
+    if(IsCharacterPerkOn(attack, "SwordplayProfessional")) piercing += 0.5;
+
+    // piercing chance
+    float p = piercing - block;
+
+    //KE: difference of 10 increase chance 2 times or reduces to 0.5 of original
+    float aSkill = LAi_GetCharacterFightLevel(attack);
+    float eSkill = LAi_GetCharacterFightLevel(enemy);
+    if(aSkill >= eSkill)
+    {
+        p = p * (1+(aSkill-eSkill)/10);
+    }
+    else
+    {
+        p = p / (1+(eSkill-aSkill)/10);
+    }
+
+//	if(aSkill < eSkill) aSkill = eSkill;
+//	float p = piercing - block + (aSkill - eSkill)*0.5;
+//	float k = 1.0;
+//	if(IsCharacterPerkOn(enemy, "BasicDefense")) k = 0.75;
+//	if(IsCharacterPerkOn(enemy, "AdvancedDefense")) k = 0.5;
+//	hitDmg = hitDmg*0.5 + 0.5;
+//	p = p*k*hitDmg*hitDmg;
 	return p;
 }
 
@@ -210,12 +228,19 @@ float LAi_CalcDeadExp(aref attack, aref enemy)
 
 	float multiple = 1.0;
 
-	if(re > ra) //KE if kill and higher rank enemy then you will get bonus
+	//if(re > ra) //KE if kill and higher rank enemy then you will get bonus
     {
-        multiple = re - ra + 1;
+        //temp exp boost
+        multiple = re;
     }
+    float totalExp = LAi_GetCharacterMaxHP(enemy) * multiple;
 
-	return LAi_GetCharacterMaxHP(enemy) * multiple;
+    //KE: log experience
+    if(sti(attack.index) == GetMainCharacterIndex())
+    {
+        Log_SetStringToLog("You got experience for the kill " + totalExp);
+    }
+	return totalExp
 }
 
 //--------------------------------------------------------------------------------
@@ -244,16 +269,19 @@ void LAi_ApplyCharacterBladeDamage(aref attack, aref enemy, float attackDmg, flo
 //		if(sti(enemy.chr_ai.immortal) != 0) return;
 //	}
 	//Применяем абилити
-	float pBreak = 0.0;
-	float critical = 0.0;
+	//float pBreak = 0.0;
+	//float critical = 0.0;
+    float critical = 1.0;
 	if(IsCharacterPerkOn(attack, "SwordplayProfessional"))
 	{
-		pBreak = pBreak + 0.25;
-		if(rand(100) <= 25)
+		//pBreak = pBreak + 0.25;
+		if(rand(100) <= 10)
 		{
 			if(CheckAttribute(enemy, "rank"))
 			{
-				critical = 20.0 + stf(enemy.rank)*2.0;
+				//critical = 20.0 + stf(enemy.rank)*2.0;
+				//KE: triple the damage 10% chance
+                critical = 3.0;
 			}
 		}
 	}else{
@@ -263,22 +291,24 @@ void LAi_ApplyCharacterBladeDamage(aref attack, aref enemy, float attackDmg, flo
 			{
 				if(CheckAttribute(enemy, "rank"))
 				{
-					critical = 20.0 + stf(enemy.rank)*1.5;
+					//critical = 20.0 + stf(enemy.rank)*1.5;
+				    //KE: double the damage 5% chance
+                    critical = 2.0;
 				}
 			}
 		}
 	}
 	float kDmg = 1.0;
-//	if(IsCharacterPerkOn(attack, "Rush"))
-//	{
-//		kDmg = 1.5;
-//		pBreak = pBreak + 0.5;
-//	}
+	if(IsCharacterPerkOn(attack, "Rush"))
+	{
+		kDmg = 1.5;
+		//pBreak = pBreak + 0.5;
+	}
 //	if(IsCharacterPerkOn(enemy, "Rush"))
 //	{
 //		pBreak = pBreak + 0.9;
 //	}
-	if(critical > 0.0)
+	if(critical > 1.0)
 	{
 		if(sti(attack.index) == GetMainCharacterIndex())
 		{
@@ -289,7 +319,7 @@ void LAi_ApplyCharacterBladeDamage(aref attack, aref enemy, float attackDmg, flo
 	{
 		//Вероятность пробивки
 		float p = LAi_BladeFindPiercingProbability(attack, enemy, hitDmg);
-		p = p + pBreak;
+		//p = p + pBreak;
 		//Если шансов пробить нет, то ненаносим провреждения
 		if(p < 0.0) return;
 		//Если шансов пробить нет, то ненаносим провреждения
@@ -297,7 +327,7 @@ void LAi_ApplyCharacterBladeDamage(aref attack, aref enemy, float attackDmg, flo
 	}
 	//Вычисляем повреждение
 	float dmg = LAi_BladeCalcDamage(attack);
-	dmg = dmg*kDmg;
+	dmg = dmg * kDmg * critical;
 	//Аттака своей группы
 	bool noExp = false;
 	if(CheckAttribute(attack, "chr_ai.group"))
@@ -324,7 +354,8 @@ void LAi_ApplyCharacterBladeDamage(aref attack, aref enemy, float attackDmg, flo
 		damage = damage*0.3;
 	}
 	//Наносим повреждение
-	LAi_ApplyCharacterDamage(enemy, MakeInt(damage + critical + 0.5));
+	//LAi_ApplyCharacterDamage(enemy, MakeInt(damage + critical + 0.5));
+    LAi_ApplyCharacterDamage(enemy, MakeInt(damage + 0.5));
 	//Проверим на смерть
 	LAi_CheckKillCharacter(enemy);
 	//Есть ли оружие у цели
@@ -430,7 +461,7 @@ float LAi_NPC_GetAttackDefence()
 {
 	aref chr = GetEventData();
 	float level = LAi_GetCharacterFightLevel(chr);
-	npc_return_tmp = 0.2 + level*0.4;
+	npc_return_tmp = 0.25 + level*0.5;
 	return npc_return_tmp;
 }
 
