@@ -238,9 +238,19 @@ float LAi_CalcDeadExp(aref attack, aref enemy)
     //KE: log experience
     if(sti(attack.index) == GetMainCharacterIndex())
     {
-        Log_SetStringToLog("You got experience for the kill " + totalExp);
+        Log_SetStringToLog("You got experience for the kill " + totalExp + " and " + enemy.money + " money");
+
     }
-	return totalExp
+    else
+    {
+        //KE: in case somebody a NPC kills some one he will get way more exp than us
+        totalExp = totalExp * multiple * 10;
+        Log_SetStringToLog(attack.name + " " + attack.lastname + " " + "got experience for the kill " + totalExp);
+    }
+    //KE: add money as well
+    AddMoneyToCharacter(attack, makeint(enemy.money));
+
+	return totalExp;
 }
 
 //--------------------------------------------------------------------------------

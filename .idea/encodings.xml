@@ -27,6 +27,7 @@
     <file url="file://$PROJECT_DIR$/QUESTS/Quest_Messages.h" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/QUESTS/both_reaction.c" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/QUESTS/quests_reaction.c" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/WorldMap/worldmap.c" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/dialog.c" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seadogs.c" charset="windows-1251" />
   </component>

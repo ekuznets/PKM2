@@ -426,7 +426,7 @@ void InitItems()
 	itm.price = 250;
 	itm.dmg_min = 10.0;
 	itm.dmg_max = 10.0;
-	itm.piercing = 50;
+	itm.piercing = 100;
 	itm.minlevel = 0;
 	itm.rare = 0.1;
 	itm.block = 0;
