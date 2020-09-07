@@ -472,7 +472,7 @@ float LAi_NPC_GetAttackDefence()
 {
 	aref chr = GetEventData();
 	float level = LAi_GetCharacterFightLevel(chr);
-	npc_return_tmp = 0.25 + level*0.5;
+	npc_return_tmp = 0.3 + level*0.25;
 	return npc_return_tmp;
 }
 
@@ -490,7 +490,7 @@ float LAi_NPC_GetFireActive()
 {
 	aref chr = GetEventData();
 	float level = LAi_GetCharacterFightLevel(chr);
-	npc_return_tmp = 0.1 + level*0.05;
+	npc_return_tmp = 0.1 + level*0.1;
 	return npc_return_tmp;
 }
 

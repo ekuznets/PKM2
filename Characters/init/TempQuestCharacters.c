@@ -4,9 +4,9 @@ int CreateTempQuestCharacters(int n)
 {
 	ref ch;
 
-	makeref(ch,Characters[n]);			// Ethilrede Claar - �����, ������� ������ � ������� ������ �� ����� �������� () Leborio Drago
-	ch.name 	= "��������";
-	ch.lastname 	= "�����";
+	makeref(ch,Characters[n]);			// Ethilrede Claar - ?????, ??????? ?????? ? ??????? ?????? ?? ????? ???????? () Leborio Drago
+	ch.name 	= "????????";
+	ch.lastname 	= "?????";
 	ch.id		= "Ethilrede Claar";
 	ch.model = "corsar2";
 	ch.sex = "man";
@@ -45,9 +45,9 @@ int CreateTempQuestCharacters(int n)
 	ch.greeting = "Gr_Gyles Dubois";
 	n = n + 1;
 
-	makeref(ch,Characters[n]);			// Stephan Bonser - ������������� �� ����� ��������
-	ch.name 	= "������";
-	ch.lastname 	= "������";
+	makeref(ch,Characters[n]);			// Stephan Bonser - ????????????? ?? ????? ????????
+	ch.name 	= "??????";
+	ch.lastname 	= "??????";
 	ch.id		= "Stephan Bonser";
 	ch.model = "man4";
 	ch.sex = "man";
@@ -79,9 +79,9 @@ int CreateTempQuestCharacters(int n)
 	LAi_NoRebirthEnable(ch);
 	n = n + 1;
 
-	makeref(ch,Characters[n]);			// Wilfred Bythesea - ���, ������ ������� ������, ������������ ������������
-	ch.name 	= "��������";
-	ch.lastname 	= "�������";
+	makeref(ch,Characters[n]);			// Wilfred Bythesea - ???, ?????? ??????? ??????, ???????????? ????????????
+	ch.name 	= "????????";
+	ch.lastname 	= "???????";
 	ch.id		= "Wilfred Bythesea";
 	ch.model = "man4";
 	ch.sex = "man";
@@ -114,9 +114,9 @@ int CreateTempQuestCharacters(int n)
 	LAi_NoRebirthEnable(ch);
 	n = n + 1;
 
-	makeref(ch,Characters[n]);			// Oswald Chappel - ������������� �� ����� ��������
-	ch.name 	= "�������";
-	ch.lastname 	= "������";
+	makeref(ch,Characters[n]);			// Oswald Chappel - ????????????? ?? ????? ????????
+	ch.name 	= "???????";
+	ch.lastname 	= "??????";
 	ch.id		= "Oswald Chappel";
 	ch.model = "korsar";
 	ch.sex = "man";
@@ -148,9 +148,9 @@ int CreateTempQuestCharacters(int n)
 	ch.greeting = "Gr_Oswald Chappel";
 	n = n + 1;
 
-	makeref(ch,Characters[n]);			// Gyles Dubois - ������������� �� ����� ��������
-	ch.name 	= "����";
-	ch.lastname 	= "�����";
+	makeref(ch,Characters[n]);			// Gyles Dubois - ????????????? ?? ????? ????????
+	ch.name 	= "????";
+	ch.lastname 	= "?????";
 	ch.id		= "Gyles Dubois";
 	ch.model = "fisherman";
 	ch.sex = "man";
@@ -183,8 +183,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Pirate Captain 01
-	ch.name 	= "����";
-	ch.lastname 	= "�������";
+	ch.name 	= "????";
+	ch.lastname 	= "???????";
 	ch.id		= "Pirate Captain 01";
 	ch.model = "fisherman";
 	ch.sex = "man";
@@ -224,8 +224,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Pirate Captain 02
-	ch.name 	= "����";
-	ch.lastname 	= "�����";
+	ch.name 	= "????";
+	ch.lastname 	= "?????";
 	ch.id		= "Pirate Captain 02";
 	ch.model = "fisherman";
 	ch.sex = "man";
@@ -265,8 +265,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Pirate Captain 03
-	ch.name 	= "����";
-	ch.lastname 	= "�����";
+	ch.name 	= "????";
+	ch.lastname 	= "?????";
 	ch.id		= "Pirate Captain 03";
 	ch.model = "fisherman";
 	ch.sex = "man";
@@ -307,8 +307,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Pirate Captain 04
-	ch.name 	= "����";
-	ch.lastname 	= "�����";
+	ch.name 	= "????";
+	ch.lastname 	= "?????";
 	ch.id		= "Pirate Captain 04";
 	ch.model = "fisherman";
 	ch.sex = "man";
@@ -348,7 +348,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Soldier for fight_01
-	ch.name 	= "������";
+	ch.name 	= "??????";
 	ch.lastname 	= "";
 	ch.id		= "Soldier for fight_01";
 	ch.model = "soldier_fra";
@@ -382,7 +382,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Soldier for fight_02
-	ch.name 	= "������";
+	ch.name 	= "??????";
 	ch.lastname 	= "";
 	ch.id		= "Soldier for fight_02";
 	ch.model = "soldier_fra";
@@ -416,8 +416,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Eng Captain Near FdF
-	ch.name 	= "�����";
-	ch.lastname 	= "�������";
+	ch.name 	= "?????";
+	ch.lastname 	= "???????";
 	ch.id		= "Eng Captain Near FdF";
 	ch.model = "Offic_eng";
 	ch.sex = "man";
@@ -456,8 +456,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Eng Captain who have IDOL
-	ch.name 	= "�������";
-	ch.lastname 	= "������";
+	ch.name 	= "???????";
+	ch.lastname 	= "??????";
 	ch.id		= "Eng Captain Idol";
 	ch.model = "Offic_eng";
 	ch.sex = "man";
@@ -496,7 +496,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// France_bukaner_01
-	ch.name 	= "�����������_�����_01";
+	ch.name 	= "???????????_?????_01";
 	ch.lastname 	= "";
 	ch.id		= "France_bukaner_01";
 	ch.model = "man2";
@@ -529,8 +529,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Danielle_sailor
-	ch.name 	= "�����";
-	ch.lastname 	= "";
+    ch.name 	= "?????";
+    ch.lastname 	= "";
 	ch.id		= "Danielle_sailor";
 	ch.model = "bocman";
 	ch.sex = "man";
@@ -562,7 +562,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// quest_pirate_01
-	ch.name 	= "�����";
+	ch.name 	= "?????";
 	ch.lastname 	= "";
 	ch.id		= "quest_pirate_01";
 	ch.model = "korsar";
@@ -597,7 +597,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// quest_smuggler_01
-	ch.name 	= "�������������";
+	ch.name 	= "?????????????";
 	ch.lastname 	= "";
 	ch.id		= "quest_smuggler_01";
 	ch.model = "corsair2";
@@ -633,8 +633,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		//  Fernam  Barrios -- korsar
-	ch.name 	= "������";
-	ch.lastname = "������";
+	ch.name 	= "??????";
+	ch.lastname = "??????";
 	ch.id		= "Fernam  Barrios";
 	ch.model	= "man1";
 	ch.sex = "man";
@@ -667,8 +667,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		//  Leborio Violate -- korsar
-	ch.name 	= "�������";
-	ch.lastname = "�������";
+	ch.name 	= "???????";
+	ch.lastname = "???????";
 	ch.id		= "Leborio Violate";
 	ch.model	= "man2";
 	ch.sex = "man";
@@ -701,7 +701,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		//  pirate for abordage 01
-	ch.name 	= "�����";
+	ch.name 	= "?????";
 	ch.lastname = "";
 	ch.id		= "pirate for abordage 01";
 	ch.model	= "man2";
@@ -735,7 +735,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		//  pirate for abordage 02
-	ch.name 	= "�����";
+	ch.name 	= "?????";
 	ch.lastname = "";
 	ch.id		= "pirate for abordage 02";
 	ch.model	= "man2";
@@ -769,7 +769,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		//  pirate for abordage 03
-	ch.name 	= "�����";
+	ch.name 	= "?????";
 	ch.lastname = "";
 	ch.id		= "pirate for abordage 03";
 	ch.model	= "man2";
@@ -802,7 +802,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		//  pirate for quest muelle 01
-	ch.name 	= "�����";
+	ch.name 	= "?????";
 	ch.lastname = "";
 	ch.id		= "pirate for quest muelle 01";
 	ch.model	= "man2";
@@ -835,7 +835,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		//  pirate for quest muelle 02
-	ch.name 	= "�����";
+	ch.name 	= "?????";
 	ch.lastname = "";
 	ch.id		= "pirate for quest muelle 02";
 	ch.model	= "corsair1";
@@ -868,7 +868,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		//  pirate for quest muelle 03
-	ch.name 	= "�����";
+	ch.name 	= "?????";
 	ch.lastname = "";
 	ch.id		= "pirate for quest muelle 03";
 	ch.model	= "korsar";
@@ -901,8 +901,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Pirate Captain 05
-	ch.name 	= "����";
-	ch.lastname 	= "�����";
+	ch.name 	= "????";
+	ch.lastname 	= "?????";
 	ch.id		= "Pirate Captain 05";
 	ch.model = "fisherman";
 	ch.sex = "man";
@@ -940,8 +940,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Pirate Captain 06
-	ch.name 	= "����";
-	ch.lastname 	= "�����";
+	ch.name 	= "????";
+	ch.lastname 	= "?????";
 	ch.id		= "Pirate Captain 06";
 	ch.model = "fisherman";
 	ch.sex = "man";
@@ -979,7 +979,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// greenford citizen 01
-	ch.name 	= "���������";
+	ch.name 	= "?????????";
 	ch.lastname 	= "";
 	ch.id		= "greenford_citizen_01";
 	ch.model = "TownGirl5";
@@ -1012,7 +1012,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// murderer_in_douwesen_01
-	ch.name 	= "���������";
+	ch.name 	= "?????????";
 	ch.lastname 	= "";
 	ch.id		= "murderer_in_douwesen_01";
 	ch.model = "man1_1";
@@ -1047,7 +1047,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// murderer_in_douwesen_02
-	ch.name 	= "���������";
+	ch.name 	= "?????????";
 	ch.lastname 	= "";
 	ch.id		= "murderer_in_douwesen_02";
 	ch.model = "corsair2";
@@ -1082,7 +1082,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// murderer_in_douwesen_03
-	ch.name 	= "���������";
+	ch.name 	= "?????????";
 	ch.lastname 	= "";
 	ch.id		= "murderer_in_douwesen_03";
 	ch.model = "bocman";
@@ -1117,7 +1117,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// murderer_in_greenford_04
-	ch.name 	= "���������";
+	ch.name 	= "?????????";
 	ch.lastname 	= "";
 	ch.id		= "murderer_in_greenford_04";
 	ch.model = "man1";
@@ -1152,7 +1152,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// murderer_in_greenford_05
-	ch.name 	= "���������";
+	ch.name 	= "?????????";
 	ch.lastname 	= "";
 	ch.id		= "murderer_in_greenford_05";
 	ch.model = "man2";
@@ -1186,7 +1186,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// murderer_in_greenford_06
-	ch.name 	= "���������";
+	ch.name 	= "?????????";
 	ch.lastname 	= "";
 	ch.id		= "murderer_in_greenford_06";
 	ch.model = "man3";
@@ -1221,7 +1221,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Eng Soldier for residence
-	ch.name 	= "������";
+	ch.name 	= "??????";
 	ch.lastname 	= "";
 	ch.id		= "Eng Soldier for residence 01";
 	ch.model = "soldier_eng";
@@ -1256,7 +1256,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Eng Soldier for residence
-	ch.name 	= "������";
+	ch.name 	= "??????";
 	ch.lastname 	= "";
 	ch.id		= "Eng Soldier for residence 02";
 	ch.model = "soldier_eng";
@@ -1291,7 +1291,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// peasant
-	ch.name 	= "���������";
+	ch.name 	= "?????????";
 	ch.lastname 	= "";
 	ch.id		= "peasant";
 	ch.model = "man5";
@@ -1323,7 +1323,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Redmond Soldier for drink fight
-	ch.name 	= "������";
+	ch.name 	= "??????";
 	ch.lastname 	= "";
 	ch.id		= "Redmond Soldier";
 	ch.model = "soldier_eng";
@@ -1357,7 +1357,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Greenford Soldier for drink fight
-	ch.name 	= "������";
+	ch.name 	= "??????";
 	ch.lastname 	= "";
 	ch.id		= "Greenford Soldier";
 	ch.model = "soldier_eng";
@@ -1391,7 +1391,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Oxbay Soldier for drink fight
-	ch.name 	= "������";
+	ch.name 	= "??????";
 	ch.lastname 	= "";
 	ch.id		= "Oxbay Soldier";
 	ch.model = "soldier_eng";
@@ -1426,7 +1426,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Douwesen Soldier for drink fight
-	ch.name 	= "������";
+	ch.name 	= "??????";
 	ch.lastname 	= "";
 	ch.id		= "Douwesen Soldier";
 	ch.model = "soldier_hol";
@@ -1461,7 +1461,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// MUELLE Soldier for drink fight
-	ch.name 	= "������";
+	ch.name 	= "??????";
 	ch.lastname 	= "";
 	ch.id		= "Muelle Soldier";
 	ch.model = "soldier_spa";
@@ -1496,7 +1496,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Conceicao Soldier for drink fight
-	ch.name 	= "������";
+	ch.name 	= "??????";
 	ch.lastname 	= "";
 	ch.id		= "Conceicao Soldier";
 	ch.model = "soldier_por";
@@ -1531,7 +1531,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// QC Soldier for drink fight
-	ch.name 	= "�����";
+	ch.name 	= "?????";
 	ch.lastname 	= "";
 	ch.id		= "QC Soldier";
 	ch.model = "corsair2";
@@ -1565,7 +1565,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Smugglers Soldier for drink fight
-	ch.name 	= "������";
+	ch.name 	= "??????";
 	ch.lastname 	= "";
 	ch.id		= "Smugglers Soldier";
 	ch.model = "korsar";
@@ -1599,7 +1599,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Pirate Soldier for drink fight
-	ch.name 	= "������";
+	ch.name 	= "??????";
 	ch.lastname 	= "";
 	ch.id		= "Pirate Soldier";
 	ch.model = "man1";
@@ -1633,7 +1633,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Falaise De Fleur Soldier for drink fight
-	ch.name 	= "������";
+	ch.name 	= "??????";
 	ch.lastname 	= "";
 	ch.id		= "Falaise De Fleur Soldier";
 	ch.model = "soldier_fra";
@@ -1668,8 +1668,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		// Rian Dekkers -- towngirl1
-	ch.name 	= "����";
-	ch.lastname = "�������";
+	ch.name 	= "????";
+	ch.lastname = "???????";
 	ch.id		= "Rian Dekkers";
 	ch.model	= "towngirl1";
 	ch.sex = "woman";
@@ -1700,8 +1700,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		// Janneke Blinkerhof -- towngirl1
-	ch.name 	= "�������";
-	ch.lastname = "����������";
+	ch.name 	= "???????";
+	ch.lastname = "??????????";
 	ch.id		= "Janneke Blinkerhof";
 	ch.model	= "towngirl2";
 	ch.sex = "woman";
@@ -1732,8 +1732,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		// Lisebet Schefold -- towngirl1
-	ch.name 	= "�������";
-	ch.lastname = "�������";
+	ch.name 	= "???????";
+	ch.lastname = "???????";
 	ch.id		= "Lisebet Schefold";
 	ch.model	= "towngirl3";
 	ch.sex = "woman";
@@ -1764,8 +1764,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		// Gheraed Drabbe -- man3
-	ch.name 	= "�����";
-	ch.lastname = "������";
+	ch.name 	= "?????";
+	ch.lastname = "??????";
 	ch.id		= "Gheraed Drabbe";
 	ch.model	= "man3";
 	ch.sex = "man";
@@ -1796,8 +1796,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		// Balltesar Figueiredo -- man3
-	ch.name 	= "���������";
-	ch.lastname = "����������";
+	ch.name 	= "?????????";
+	ch.lastname = "??????????";
 	ch.id		= "Balltesar Figueiredo";
 	ch.model	= "man2";
 	ch.sex = "man";
@@ -1828,8 +1828,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		// father Gareth -- man3
-	ch.name 	= "����";
-	ch.lastname = "�����";
+	ch.name 	= "????";
+	ch.lastname = "?????";
 	ch.id		= "father Gareth";
 	ch.model	= "monk2";
 	ch.sex = "man";
@@ -1861,7 +1861,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// 
-	ch.name 	= "���������� �������";
+	ch.name 	= "?????????? ???????";
 	ch.lastname 	= "";
 	ch.id		= "Mystery_Man_01";
 	ch.model = "ANIMISTS2";
@@ -1904,7 +1904,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// 
-	ch.name 	= "���������� �������";
+	ch.name 	= "?????????? ???????";
 	ch.lastname 	= "";
 	ch.id		= "Mystery_Man_02";
 	ch.model = "ANIMISTS2";
@@ -1945,7 +1945,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// 
-	ch.name 	= "���������� �������";
+	ch.name 	= "?????????? ???????";
 	ch.lastname 	= "";
 	ch.id		= "Mystery_Man_03";
 	ch.model = "ANIMISTS2";
@@ -1986,11 +1986,11 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 
-//�������������� ��� ��������� �����������
+//?????????????? ??? ????????? ???????????
 
 
-	makeref(ch,Characters[n]);			// ������������� 1
-	ch.name 	= "�������������";
+	makeref(ch,Characters[n]);			// ????????????? 1
+	ch.name 	= "?????????????";
 	ch.lastname 	= "";
 	ch.id		= "Rand_Smug01";
 //	ch.model = "sat_monk";
@@ -2025,8 +2025,8 @@ int CreateTempQuestCharacters(int n)
 	ch.greeting = "Gr_Smuggler_OnShore";
 	n = n + 1;
 
-	makeref(ch,Characters[n]);			// ������������� 2
-	ch.name 	= "�������������";
+	makeref(ch,Characters[n]);			// ????????????? 2
+	ch.name 	= "?????????????";
 	ch.lastname 	= "";
 	ch.id		= "Rand_Smug02";
 //	ch.model = "sat_monk";
@@ -2061,8 +2061,8 @@ int CreateTempQuestCharacters(int n)
 	ch.greeting = "Gr_Smuggler_OnShore";
 	n = n + 1;
 
-	makeref(ch,Characters[n]);			// ������������� 3
-	ch.name 	= "�������������";
+	makeref(ch,Characters[n]);			// ????????????? 3
+	ch.name 	= "?????????????";
 	ch.lastname 	= "";
 	ch.id		= "Rand_Smug03";
 //	ch.model = "sat_monk";
@@ -2097,9 +2097,9 @@ int CreateTempQuestCharacters(int n)
 	ch.greeting = "Gr_Smuggler_OnShore";
 	n = n + 1;
 
-	makeref(ch,Characters[n]);			// Bernardo Gamboa - �������. ������ �� ������ ���������
-	ch.name 	= "��������";
-	ch.lastname 	= "������";
+	makeref(ch,Characters[n]);			// Bernardo Gamboa - ???????. ?????? ?? ?????? ?????????
+	ch.name 	= "????????";
+	ch.lastname 	= "??????";
 	ch.id		= "Bernardo Gamboa";
 	ch.model = "corsair2";
 	ch.sex = "man";
@@ -2139,9 +2139,9 @@ int CreateTempQuestCharacters(int n)
 	ch.greeting = "Gr_Bernardo Gamboa";
 	n = n + 1;
 
-	makeref(ch,Characters[n]);			// Corentin Lucay - �������� ����������� �����
-	ch.name 	= "��������";
-	ch.lastname 	= "�����";
+	makeref(ch,Characters[n]);			// Corentin Lucay - ???????? ??????????? ?????
+	ch.name 	= "????????";
+	ch.lastname 	= "?????";
 	ch.id		= "Corentin Lucay";
 	ch.model = "corsair1_1";
 	ch.sex = "man";
@@ -2174,7 +2174,7 @@ int CreateTempQuestCharacters(int n)
 	LAi_SetHP(ch, 80.0, 80.0);
 	n = n + 1;
 
-	makeref(ch,Characters[n]);		//������ ������� ��������� ������
+	makeref(ch,Characters[n]);		//?????? ??????? ????????? ??????
 	ch.name 	= " ";
 	ch.lastname = " ";
 	ch.id		= "Coastal_Captain01";
@@ -2198,7 +2198,7 @@ int CreateTempQuestCharacters(int n)
 	LAi_SetHP(ch, 80.0, 80.0);
 	n = n + 1;
 
-	makeref(ch,Characters[n]);		//������ ������� ��������� ������
+	makeref(ch,Characters[n]);		//?????? ??????? ????????? ??????
 	ch.name 	= " ";
 	ch.lastname = " ";
 	ch.id		= "Coastal_Captain02";
@@ -2223,7 +2223,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 
-	makeref(ch,Characters[n]);		//������ ������� ��������� ������
+	makeref(ch,Characters[n]);		//?????? ??????? ????????? ??????
 	ch.name 	= " ";
 	ch.lastname = " ";
 	ch.id		= "Coastal_Captain03";
@@ -2247,9 +2247,9 @@ int CreateTempQuestCharacters(int n)
 	LAi_SetHP(ch, 80.0, 80.0);
 	n = n + 1;
 
-	makeref(ch,Characters[n]);			// Mergildo Hurtado - ������� ����� �� ������������
-	ch.name 	= "���������";
-	ch.lastname 	= "�������";
+	makeref(ch,Characters[n]);			// Mergildo Hurtado - ??????? ????? ?? ????????????
+	ch.name 	= "?????????";
+	ch.lastname 	= "???????";
 	ch.id		= "Mergildo Hurtado";
 	ch.model = "offic_spa";
 	ch.sex = "man";
@@ -2288,8 +2288,8 @@ int CreateTempQuestCharacters(int n)
 	ch.greeting = "Gr_Mergildo Hurtado";
 	n = n + 1;
 
-	makeref(ch,Characters[n]);			// Jordano - ��� ������� �� �����
-	ch.name 	= "��������";
+	makeref(ch,Characters[n]);			// Jordano - ??? ??????? ?? ?????
+	ch.name 	= "????????";
 	ch.lastname 	= "";
 	ch.id		= "Jordano";
 	ch.model = "man4";
@@ -2326,8 +2326,8 @@ int CreateTempQuestCharacters(int n)
 // Nigel Blythe  quest
 
 	makeref(ch,Characters[n]);		// Friedrich Maxwell
-	ch.name 	= "�������";
-	ch.lastname = "�������";
+	ch.name 	= "???????";
+	ch.lastname = "???????";
 	ch.id		= "Friedrich Maxwell";
 	ch.model	= "corsair3";
 	ch.sex = "man";
@@ -2356,8 +2356,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		// Luis Meranda
-	ch.name 	= "����";
-	ch.lastname = "�������";
+	ch.name 	= "????";
+	ch.lastname = "???????";
 	ch.id		= "Luis Meranda";
 	ch.model	= "man1";
 	ch.sex = "man";
@@ -2385,8 +2385,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);		// Pirates_7 --
-	ch.name 	= "�����";
-	ch.lastname = "����";
+	ch.name 	= "?????";
+	ch.lastname = "????";
 	ch.id		= "Pirates_7";
 	ch.model	= "man4";
 	ch.sex = "man";
@@ -2422,8 +2422,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Claudio Murena.
-	ch.name 	= "�������";
-	ch.lastname 	= "������";
+	ch.name 	= "???????";
+	ch.lastname 	= "??????";
 	ch.id		= "Claudio Murena";
 	ch.model = "man2";
 	ch.sex = "man";
@@ -2457,8 +2457,8 @@ int CreateTempQuestCharacters(int n)
 	//Hitman
 
 	makeref(ch,Characters[n]);			// Ambroz Bricenos
-	ch.name 	= "������";
-	ch.lastname 	= "��������";
+	ch.name 	= "??????";
+	ch.lastname 	= "????????";
 	ch.id		= "Ambroz Bricenos";
 	ch.model = "Man3_1";
 	ch.sex = "man";
@@ -2491,8 +2491,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Mateus Santos
-	ch.name 	= "������";
-	ch.lastname 	= "������";
+	ch.name 	= "??????";
+	ch.lastname 	= "??????";
 	ch.id		= "Mateus Santos";
 	ch.model = "blackman";
 	ch.sex = "man";
@@ -2527,7 +2527,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Thug 1
-	ch.name 	= "���";
+	ch.name 	= "???";
 	ch.lastname 	= "";
 	ch.id		= "Thug1";
 	ch.model = "pirat6";
@@ -2563,7 +2563,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Thug 2
-	ch.name 	= "���";
+	ch.name 	= "???";
 	ch.lastname 	= "";
 	ch.id		= "Thug2";
 	ch.model = "pirat7";
@@ -2599,7 +2599,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Thug 3
-	ch.name 	= "���";
+	ch.name 	= "???";
 	ch.lastname 	= "";
 	ch.id		= "Thug3";
 	ch.model = "pirat8";
@@ -2635,8 +2635,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Geffrey Bampfylde
-	ch.name 	= "������";
-	ch.lastname 	= "��������";
+	ch.name 	= "??????";
+	ch.lastname 	= "????????";
 	ch.id		= "Geffrey Bampfylde";
 	ch.model = "fatman2";
 	ch.sex = "man";
@@ -2667,7 +2667,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Bucho
-	ch.name 	= "����";
+	ch.name 	= "????";
 	ch.lastname 	= "";
 	ch.id		= "Bucho";
 	ch.model = "man4";
@@ -2701,8 +2701,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Pepin Bertillon
-	ch.name 	= "�����";
-	ch.lastname 	= "���������";
+	ch.name 	= "?????";
+	ch.lastname 	= "?????????";
 	ch.id		= "Pepin Bertillon";
 	ch.model = "man3";
 	ch.sex = "man";
@@ -2737,7 +2737,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Bertillon's guard 1
-	ch.name 	= "������������� ����������";
+	ch.name 	= "????????????? ??????????";
 	ch.lastname 	= "";
 	ch.id		= "Bertillon's guard1";
 	ch.model = "pirat2";
@@ -2771,7 +2771,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Bertillon's guard 2
-	ch.name 	= "������������� ����������";
+	ch.name 	= "????????????? ??????????";
 	ch.lastname 	= "";
 	ch.id		= "Bertillon's guard2";
 	ch.model = "pirat4";
@@ -2805,8 +2805,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Vito Leone
-	ch.name 	= "����";
-	ch.lastname 	= "����";
+	ch.name 	= "????";
+	ch.lastname 	= "????";
 	ch.id		= "Vito Leone";
 	ch.model = "Old_man1";
 	ch.sex = "man";
@@ -2841,8 +2841,8 @@ int CreateTempQuestCharacters(int n)
 	//Lucas
 
 	makeref(ch,Characters[n]);			// Joaquin Da Saldanha
-	ch.name 	= "������";
-	ch.lastname 	= "�� ���������";
+	ch.name 	= "??????";
+	ch.lastname 	= "?? ?????????";
 	ch.id		= "Joaquin Da Saldanha";
 	ch.model = "admiral";
 	ch.sex = "man";
@@ -2876,8 +2876,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Arabella Silehard
-	ch.name 	= "��������";
-	ch.lastname 	= "��������";
+	ch.name 	= "????????";
+	ch.lastname 	= "????????";
 	ch.id		= "Arabella Silehard";
 	ch.model = "towngirl1";
 	ch.sex = "woman";
@@ -2908,7 +2908,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Arabella's Guard 1
-	ch.name 	= "������������� ��������";
+	ch.name 	= "????????????? ????????";
 	ch.lastname 	= "";
 	ch.id		= "Arabella's guard 1";
 	ch.model = "offic_eng";
@@ -2944,7 +2944,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Arabella's Guard 2
-	ch.name 	= "������������� ��������";
+	ch.name 	= "????????????? ????????";
 	ch.lastname 	= "";
 	ch.id		= "Arabella's guard 2";
 	ch.model = "offic_eng";
@@ -2980,8 +2980,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Ransom Pirate 1
-	ch.name 	= "�����";
-	ch.lastname 	= "����";
+	ch.name 	= "?????";
+	ch.lastname 	= "????";
 	ch.id		= "Billy Brock";
 	ch.model = "korsar";
 	ch.sex = "man";
@@ -3016,8 +3016,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Ransom Pirate 2
-	ch.name 	= "������";
-	ch.lastname 	= "���������";
+	ch.name 	= "??????";
+	ch.lastname 	= "?????????";
 	ch.id		= "Snorri Baldursson";
 	ch.model = "sailor6";
 	ch.sex = "man";
@@ -3049,8 +3049,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Ransom Pirate 3
-	ch.name 	= "�������";
-	ch.lastname 	= "�����";
+	ch.name 	= "???????";
+	ch.lastname 	= "?????";
 	ch.id		= "Francis Snake";
 	ch.model = "corsair1_1";
 	ch.sex = "man";
@@ -3086,8 +3086,8 @@ int CreateTempQuestCharacters(int n)
 	//Tutorial
 
 	makeref(ch,Characters[n]);			// Malcolm Hatcher
-	ch.name 	= "���������";
-	ch.lastname 	= "������";
+    ch.name 	= "Malcolm";
+    ch.lastname 	= "Hatcher";
 	ch.id		= "Malcolm Hatcher";
 	ch.model = "bocman3";
 	ch.sex = "man";
@@ -3124,8 +3124,8 @@ int CreateTempQuestCharacters(int n)
 // Edgar Attwood quest
 
 		makeref(ch,Characters[n]);			// Martin Warner.
-	ch.name 	= "������";
-	ch.lastname 	= "������";
+	ch.name 	= "??????";
+	ch.lastname 	= "??????";
 	ch.id		= "Martin Warner";
 	ch.model = "soldier_Eng2";
 	ch.sex = "man";
@@ -3154,8 +3154,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Jack Greenfield.
-	ch.name 	= "����";
-	ch.lastname 	= "��������";
+	ch.name 	= "????";
+	ch.lastname 	= "????????";
 	ch.id		= "Jack Greenfield";
 	ch.model = "soldier_Eng3";
 	ch.sex = "man";
@@ -3256,8 +3256,8 @@ int CreateTempQuestCharacters(int n)
 //Cursed Coins Quest
 
 	makeref(ch,Characters[n]);			// First Cursed Pirate
-	ch.name 	= "���������";
-	ch.lastname 	= "�����";
+	ch.name 	= "?????????";
+	ch.lastname 	= "?????";
 	ch.id		= "Cursed_Pirate_01";
 	ch.model = "man5_1";
 	ch.sex = "man";
@@ -3292,8 +3292,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Second Cursed Pirate
-	ch.name 	= "���������";
-	ch.lastname 	= "�����";
+	ch.name 	= "?????????";
+	ch.lastname 	= "?????";
 	ch.id		= "Cursed_Pirate_02";
 	ch.model = "bocman4";
 	ch.sex = "man";
@@ -3328,8 +3328,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Big Boss.
-	ch.name 	= "�������";
-	ch.lastname 	= "����";
+	ch.name 	= "???????";
+	ch.lastname 	= "????";
 	ch.id		= "Big Boss";
 	ch.model = "soldier_Eng3";
 	ch.sex = "man";
@@ -3361,8 +3361,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Henry Peat
-	ch.name 	= "�����";
-	ch.lastname 	= "���";
+	ch.name 	= "?????";
+	ch.lastname 	= "???";
 	ch.id		= "Henry Peat";
 	ch.model = "old_man2";
 	ch.sex = "man";
@@ -3393,8 +3393,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Gordon Carpenter
-	ch.name 	= "������";
-	ch.lastname 	= "���������";
+	ch.name 	= "??????";
+	ch.lastname 	= "?????????";
 	ch.id		= "Gordon Carpenter";
 	ch.model = "bocman4";
 	ch.sex = "man";
@@ -3425,7 +3425,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// ANIMISTS
-	ch.name 	= "�������";
+	ch.name 	= "???????";
 	ch.lastname 	= "";
 	ch.id		= "Dark Captain";
 	ch.model = "ANIMISTS2";
@@ -3466,8 +3466,8 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Giraldo Figuiera
-	ch.name 	= "���������";
-	ch.lastname 	= "��������";
+	ch.name 	= "?????????";
+	ch.lastname 	= "????????";
 	ch.id		= "Giraldo Figuiera";
 	ch.model = "corsar2";
 	ch.sex = "man";
@@ -3507,7 +3507,7 @@ int CreateTempQuestCharacters(int n)
 	n = n + 1;
 
 	makeref(ch,Characters[n]);			// Giraldo Figuiera
-	ch.name 	= "��������";
+	ch.name 	= "????????";
 	ch.lastname 	= "";
 	ch.id		= "Quest trader";
 	ch.model = "storeman2";
@@ -3544,7 +3544,7 @@ int CreateTempQuestCharacters(int n)
 	ch.greeting = "Gr_Anacleto";
 	n = n + 1;
 
-	makeref(ch,Characters[n]);		//������ �������-�������� �� ���������� ����� ����������
+	makeref(ch,Characters[n]);		//?????? ???????-???????? ?? ?????????? ????? ??????????
 	ch.name 	= " ";
 	ch.lastname = " ";
 	ch.id		= "Usurer_Avenger01";
@@ -3566,7 +3566,7 @@ int CreateTempQuestCharacters(int n)
 	LAi_SetHP(ch, 80.0, 80.0);
 	n = n + 1;
 
-	makeref(ch,Characters[n]);		//������ �������-�������� �� ���������� ����� ����������
+	makeref(ch,Characters[n]);		//?????? ???????-???????? ?? ?????????? ????? ??????????
 	ch.name 	= " ";
 	ch.lastname = " ";
 	ch.id		= "Usurer_Avenger02";
@@ -3588,7 +3588,7 @@ int CreateTempQuestCharacters(int n)
 	LAi_SetHP(ch, 80.0, 80.0);
 	n = n + 1;
 
-	makeref(ch,Characters[n]);		//������ �������-�������� �� ���������� ����� ����������
+	makeref(ch,Characters[n]);		//?????? ???????-???????? ?? ?????????? ????? ??????????
 	ch.name 	= " ";
 	ch.lastname = " ";
 	ch.id		= "Usurer_Avenger03";

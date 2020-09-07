@@ -19,7 +19,7 @@ void InitCannons()
 	rCannon.FireAngMax = 0.60;
 	rCannon.FireAngMin = -0.35;
 	rCannon.DamageMultiply = 1.0;
-	InitBaseCannons_CalcSpeedV0(&rCannon,500.0);
+	InitBaseCannons_CalcSpeedV0(&rCannon,400.0);
 
 	makeref(rCannon,Cannon[CANNON_TYPE_CULVERINE_LBS16]);
 	rCannon.type = CANNON_NAME_CULVERINE;
@@ -41,7 +41,19 @@ void InitCannons()
 	rCannon.FireAngMax = 0.60;
 	rCannon.FireAngMin = -0.35;
 	rCannon.DamageMultiply = 4;
-	InitBaseCannons_CalcSpeedV0(&rCannon,400.0);
+	InitBaseCannons_CalcSpeedV0(&rCannon,500.0);
+
+    makeref(rCannon,Cannon[CANNON_TYPE_CULVERINE_LBS32]);
+    rCannon.type = CANNON_NAME_CULVERINE;
+    rCannon.caliber = 32;
+    rCannon.ReloadTime = 75;  // boal 30
+    rCannon.Cost = 8000;
+    rCannon.Weight = 82;
+    rCannon.FireAngMax = 0.60;
+    rCannon.FireAngMin = -0.35;
+    rCannon.DamageMultiply = 5;
+    rCannon.TradeOff = true;
+    InitBaseCannons_CalcSpeedV0(&rCannon,700.0);
 
 	makeref(rCannon,Cannon[CANNON_TYPE_CANNON_LBS12]);
 	rCannon.type = CANNON_NAME_CANNON;
@@ -52,7 +64,7 @@ void InitCannons()
 	rCannon.FireAngMax = 0.60;
 	rCannon.FireAngMin = -0.35;
 	rCannon.DamageMultiply = 1.0;
-	InitBaseCannons_CalcSpeedV0(&rCannon,350.0);
+	InitBaseCannons_CalcSpeedV0(&rCannon,260.0);
 
 	makeref(rCannon,Cannon[CANNON_TYPE_CANNON_LBS16]);
 	rCannon.type = CANNON_NAME_CANNON;
@@ -74,7 +86,7 @@ void InitCannons()
 	rCannon.FireAngMax = 0.60;
 	rCannon.FireAngMin = -0.35;
 	rCannon.DamageMultiply = 4;
-	InitBaseCannons_CalcSpeedV0(&rCannon,260.0);
+	InitBaseCannons_CalcSpeedV0(&rCannon,350.0);
 
 	makeref(rCannon,Cannon[CANNON_TYPE_CANNON_LBS32]);
 	rCannon.type = CANNON_NAME_SPECIAL_CANNON;

@@ -876,8 +876,9 @@ void Ship_HullHitEvent()
 	switch (iBallType)
 	{
 		case GOOD_BALLS:
-			if (rand(35) == 17) { bSeriousBoom = true; }
-			if (rand(30) == 15) { bInflame = true; }
+            //KE: 5% chance for crit
+			if (rand(100) == 95) { bSeriousBoom = true; }
+			if (rand(3) == 1) { bInflame = true; }
 			Play3DSound("ball2bort", x, y, z);
 			CreateParticleSystem("blast", x, y, z, 0.0, 0.0, 0.0, 0);
 		break;
@@ -892,7 +893,8 @@ void Ship_HullHitEvent()
 			CreateParticleSystem("blast", x, y, z, 0.0, 0.0, 0.0, 0);
 		break;
 		case GOOD_BOMBS:
-			if (rand(20) == 10) { bSeriousBoom = true; }
+		    //KE: 5% chance for crit
+			if (rand(100) >= 95) { bSeriousBoom = true; }
 			if (rand(2) == 1) { bInflame = true; }
 			Play3DSound("bomb2bort", x, y, z);
 			CreateParticleSystem("blast", x, y, z, 0.0, 0.0, 0.0, 0);
@@ -906,9 +908,10 @@ void Ship_HullHitEvent()
 		float fCrewDamage = stf(rBall.DamageCrew) * fCannonDamageMultiply * AIShip_isPerksUse(rBallCharacter.TmpPerks.CrewDamageUp, 1.0, 1.15);
 
 		if (bSeriousBoom)
-		{ 
-			fCrewDamage = fCrewDamage * 2.0;
-			fHP = fCannonDamageMultiply * stf(rBall.DamageHull) * (4.0 + frnd() * 2.0);
+		{
+            //KE: additional 4x damage for critical shot
+			fCrewDamage = 4 * fCrewDamage * 2.0;
+			fHP = 4 * fCannonDamageMultiply * stf(rBall.DamageHull) * (4.0 + frnd() * 2.0);
 			Ship_ApplyHullHitpoints(rOurCharacter, fHP, KILL_BY_BALL, iBallCharacterIndex);
 			Ship_ApplyCrewHitpoints(rOurCharacter, fCrewDamage * 1.5);
 			if (iCompanion == - 1) { Ship_AddCharacterExp(rBallCharacter, 150); }

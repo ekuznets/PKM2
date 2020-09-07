@@ -341,6 +341,12 @@ void CreateCharacters()
 
 	Characters[GetCharacterIndex("Danielle")].model.animation = "woman";
 
+	//KE: playing as Daniel
+    ch.model = "danielle";
+    ch.model.animation = "woman";
+    ch.model.height = 1.75;
+    ch.FaceId = 15;
+
 	ReloadProgressUpdate();
 
 }
