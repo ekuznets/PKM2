@@ -3,11 +3,13 @@
 #define BRDLT_SHIP	0
 #define BRDLT_FORT	1
 
-#define BRDLT_MAXCREW	24
+#define BRDLT_MAXCREW	32
 
 #define LOCINITBRD_DEFAULTLOCATION "ship default deck"
 #define LOCINITBRD_DEFAULTLOCATION_FORT "fort default deck"
 
+#define MAX_GROUP_SIZE	6
+bool IsFort = false;
 
 int boarding_location = -1;
 int boarding_location_type = -1;
@@ -17,6 +19,7 @@ int boarding_player_crew = 0;
 int boarding_enemy_base_crew = 0;
 int boarding_officers = 0;
 float boarding_player_crew_per_chr = 1.0;
+float boarding_enemy_crew_per_chr = 1.0;
 ref boarding_enemy;
 object boarding_adr[4];
 float boarding_exp = 0;
@@ -86,6 +89,14 @@ void LAi_StartBoarding(int locType, ref echr, bool isMCAttack)
 	int mcrew = GetCrewQuantity(mchr);
 	int eclass = GetCharacterShipClass(echr);
 	int ecrew = GetCrewQuantity(echr) + 1;
+
+	//KE: musket shoot, need to make sure enemy can also do it
+    if((IsCharacterPerkOn(mchr,"MusketsShoot")) && (boarding_location_type == BRDLT_SHIP))
+    {
+        ecrew = ecrew*0.85;
+        Log_SetStringToLog("Мушкетным залпом убито " + ecrew*0.15 + " команды корабля.");
+    }
+
 	if(ecrew < 1) ecrew = 1;
 	boarding_erank = sti(echr.rank);
 	boarding_enemy_base_crew = ecrew;
@@ -166,14 +177,17 @@ void LAi_StartBoarding(int locType, ref echr, bool isMCAttack)
 	//Определяем размеры команд
 	boarding_enemy = echr;
 	//Максимальное количество человек на корабле
-	int maxcrew = 4;
+	//KE: 6 to 32 is maximum
+	int maxcrew = MAX_GROUP_SIZE;
 	while(maxcrew < BRDLT_MAXCREW)
 	{
 		if(!CheckAttribute(&Locations[locID], "boarding.nextdeck")) break;
 		if(Locations[locID].boarding.nextdeck == "") break;
 		locID = FindLocation(Locations[locID].boarding.nextdeck);
 		if(locID < 0) break;
-		maxcrew = maxcrew + 4;
+
+		//KE: remember how many people have been in the fight
+		maxcrew = maxcrew + MAX_GROUP_SIZE;
 	}
 	//Отношение сторон
 	float curplayercrew = mcrew;
@@ -214,6 +228,7 @@ void LAi_StartBoarding(int locType, ref echr, bool isMCAttack)
 		}
 	}
 	boarding_player_crew_per_chr = (curplayercrew + boarding_officers + 1)/(mcrew + boarding_officers + 1);
+    boarding_enemy_crew_per_chr = boarding_enemy_base_crew/ecrew;
 	//Выставим игроку и офицерам максимальную жизнь и запомним адреса
 	LAi_SetCurHPMax(mchr);
 	boarding_adr[0].location = mchr.location;
@@ -437,15 +452,24 @@ void LAi_ActivateReload()
 //Расставить персонажей для боя
 void LAi_SetBoardingActors(string locID)
 {
-	int i;
+	int i, limit;
 	ref chr;
 	string model;
 	string ani;
 	chr = GetMainCharacter();
 	int mchr_rank = sti(chr.rank) - 1;
+    int mclass = GetCharacterShipClass(GetMainCharacter());
+    int eclass = GetCharacterShipClass(boarding_enemy);
 	int xhp;
+    limit = MAX_GROUP_SIZE;
 	//Установим союзников из команды
-	for(i = LAi_numloginedcharacters; i < 4; i++)
+//    if(Locations[locIndex].models.always.l1 == "cap") limit = 4;
+//    if(Locations[locIndex].models.always.l1 == "hold") limit = 4;
+//    if(IsFort) limit = MAX_GROUP_SIZE;
+//    if(Locations[locIndex].models.always.l1 == "fort2") limit = 4;
+//    if(Locations[locIndex].models.always.l1 == "fort3") limit = 4;
+
+	for(i = LAi_numloginedcharacters; i < limit; i++)
 	{
 		if(boarding_player_crew <= 0) break;
 		model = LAi_GetBoardingModel(GetMainCharacter(), &ani);
@@ -457,14 +481,14 @@ void LAi_SetBoardingActors(string locID)
 		chr.blade.colorend = argb(0, 20, 60, 100);
 		LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER);
 		boarding_player_crew = boarding_player_crew - 1;
-		LAi_SetAdjustFencingSkill(chr, 2.0, 5.0);
+		LAi_SetAdjustFencingSkill(chr, 3.0, 6.0);
 		LAi_AdjustFencingSkill(chr);
-		xhp = boarding_player_hp + rand(25) - 10;
+        xhp = makeint((boarding_player_hp + rand(boarding_player_crew_per_chr + 25))/mclass);
 		LAi_SetHP(chr, xhp, xhp);
 		LAi_NPC_Equip(chr, mchr_rank, true, true);
 	}
 	//Установим врагов
-	for(i = 0; i < 4; i++)
+	for(i = 0; i < limit; i++)
 	{
 		if(boarding_enemy_crew <= 0) break;
 		model = LAi_GetBoardingModel(boarding_enemy, &ani);
@@ -476,9 +500,9 @@ void LAi_SetBoardingActors(string locID)
 		chr.blade.colorend = argb(0, 20, 60, 100);
 		LAi_group_MoveCharacter(chr, LAI_GROUP_BRDENEMY);
 		boarding_enemy_crew = boarding_enemy_crew - 1;
-		LAi_SetAdjustFencingSkill(chr, 2.0, 5.0);
+		LAi_SetAdjustFencingSkill(chr, 3.0, 6.0);
 		LAi_AdjustFencingSkill(chr);
-		xhp = boarding_enemy_hp + rand(20) - 10;
+        xhp = makeint((boarding_enemy_hp + rand(boarding_enemy_crew_per_chr + 25))/eclass);
 		LAi_SetHP(chr, xhp, xhp);
 		LAi_NPC_Equip(chr, boarding_erank, true, true);
 	}

@@ -172,7 +172,7 @@ float LAi_GunCalcExperience(aref attack, aref enemy, float dmg)
 //	if(re < 1.0) re = 1.0;
 //	dmg = dmg*((1.0 + re*0.5)/(1.0 + ra*0.5));
 
-    //exp = dmg dealed
+    //exp = dmg dealt
 	return dmg;
 }
 
@@ -223,12 +223,13 @@ float LAi_CalcDeadExp(aref attack, aref enemy)
 	//float dmg = (0.5 + 4.0*LAi_GetCharacterFightLevel(enemy))*LAi_GetCharacterMaxHP(enemy);
 	//dmg = dmg*((1.0 + re*0.5)/(1.0 + ra*0.5));
 
-	//KE: simple formula (max health) * (enemy rank) / y(our rank)
+	//KE: simple formula (max health) * (enemy rank) / (your rank)
 	//KE: rewarding to kill a next level opponent but less for your level
 
 	float multiple = 1.0;
 
-	//if(re > ra) //KE if kill and higher rank enemy then you will get bonus
+    //KE if kill and higher rank enemy then you will get bonus
+	//if(re > ra)
     {
         //temp exp boost
         multiple = re;
@@ -244,7 +245,7 @@ float LAi_CalcDeadExp(aref attack, aref enemy)
     else
     {
         //KE: in case somebody a NPC kills some one he will get way more exp than us
-        totalExp = totalExp * multiple * 10;
+        totalExp = totalExp * 10;
         Log_SetStringToLog(attack.name + " " + attack.lastname + " " + "got experience for the kill " + totalExp);
     }
     //KE: add money as well

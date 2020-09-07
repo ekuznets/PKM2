@@ -1687,7 +1687,7 @@ void Ship_UpdatePerks()
 	aTmpPerks.LongRangeShoot			= CheckOfficersPerk(rCharacter, "LongRangeShoot");
 	aTmpPerks.CannonProfessional		= CheckOfficersPerk(rCharacter, "CannonProfessional");
 	aTmpPerks.LongRangeGrappling		= CheckOfficersPerk(rCharacter, "LongRangeGrappling");		
-	//aTmpPerks.MusketsShoot				= CheckOfficersPerk(rCharacter, "MusketsShoot");				// !!!!
+	aTmpPerks.MusketsShoot				= CheckOfficersPerk(rCharacter, "MusketsShoot");				// !!!!
 	aTmpPerks.GrapplingProfessional		= CheckOfficersPerk(rCharacter, "GrapplingProfessional");	
 	aTmpPerks.BasicBattleState			= CheckOfficersPerk(rCharacter, "BasicBattleState");
 	aTmpPerks.AdvancedBattleState		= CheckOfficersPerk(rCharacter, "AdvancedBattleState");

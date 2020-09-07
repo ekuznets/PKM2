@@ -51,11 +51,12 @@ void extrnInitPerks()
 
 	ChrPerksList.list.LongRangeGrappling.descr = "perkLongRangeGrappling";
 
-	//ChrPerksList.list.MusketsShoot.descr = "perkMusketsShoot";
+    // KE: enable muskets
+	ChrPerksList.list.MusketsShoot.descr = "perkMusketsShoot";
 
 	ChrPerksList.list.GrapplingProfessional.descr = "perkGrapplingProfessional";
 	ChrPerksList.list.GrapplingProfessional.condition.LongRangeGrappling = true;
-	//ChrPerksList.list.GrapplingProfessional.condition.MusketsShoot = true;
+	ChrPerksList.list.GrapplingProfessional.condition.MusketsShoot = true;
 
 	ChrPerksList.list.InstantBoarding.descr = "perkInstantBoarding";
 	ChrPerksList.list.InstantBoarding.condition.GrapplingProfessional = true;
