@@ -90,11 +90,17 @@ void LAi_StartBoarding(int locType, ref echr, bool isMCAttack)
 	int eclass = GetCharacterShipClass(echr);
 	int ecrew = GetCrewQuantity(echr) + 1;
 
+    Log_SetStringToLog("Абордажная команда у вас " + mcrew + " против " + ecrew + " у врага");
+
 	//KE: musket shoot, need to make sure enemy can also do it
-    if((IsCharacterPerkOn(mchr,"MusketsShoot")) && (boarding_location_type == BRDLT_SHIP))
+    if(IsCharacterPerkOn(mchr,"MusketsShoot") && (locType == BRDLT_SHIP))
     {
-        ecrew = ecrew*0.85;
-        Log_SetStringToLog("Мушкетным залпом убито " + ecrew*0.15 + " команды корабля.");
+        //skill.Defence, 15 to 25 % damage
+        int def = makeint(echr.skill.Defence);
+        if (def < 0) def = 0;
+        float crewDamagePersent = (25 - def) / 100.0;
+        ecrew = ecrew * (1-crewDamagePersent);
+        Log_SetStringToLog("Мушкетным залпом убито " + makeint(ecrew * crewDamagePersent) + " команды корабля.");
     }
 
 	if(ecrew < 1) ecrew = 1;

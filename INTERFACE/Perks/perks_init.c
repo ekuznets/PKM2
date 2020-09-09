@@ -111,7 +111,7 @@ void extrnInitPerks()
 
 	ChrPerksList.list.Brander.descr = "perkBrander";
 
-	//ChrPerksList.list.Troopers.descr = "perkTroopers";
+	ChrPerksList.list.Troopers.descr = "perkTroopers";
 
 	ChrPerksList.list.Trustworthy.descr = "perkTrustworthy";
 
@@ -119,4 +119,7 @@ void extrnInitPerks()
 
 	ChrPerksList.list.AdvancedCommerce.descr = "perkAdvancedCommerce";
 	ChrPerksList.list.AdvancedCommerce.condition.BasicCommerce = true;
+
+    ChrPerksList.list.Love.descr = "perkLove";
+    ChrPerksList.list.Love.condition.AdvancedCommerce = true;
 }
