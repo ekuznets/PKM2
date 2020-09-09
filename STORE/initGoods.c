@@ -5,7 +5,7 @@ void InitGoods()
 	Goods[GOOD_BALLS].Weight		= 3;
 	Goods[GOOD_BALLS].Units			= 20;
 	Goods[GOOD_BALLS].SpeedV0		= 1.0;
-	Goods[GOOD_BALLS].DamageHull	= 30.0;
+	Goods[GOOD_BALLS].DamageHull	= 20.0;
 	Goods[GOOD_BALLS].DamageRig		= 5.0;
 	Goods[GOOD_BALLS].DamageCrew	= 0.5;
 
@@ -14,9 +14,9 @@ void InitGoods()
 	Goods[GOOD_GRAPES].Weight		= 2;
 	Goods[GOOD_GRAPES].Units		= 20;
 	Goods[GOOD_GRAPES].SpeedV0		= 0.5;
-	Goods[GOOD_GRAPES].DamageHull	= 2.5;
+	Goods[GOOD_GRAPES].DamageHull	= 3.0;
 	Goods[GOOD_GRAPES].DamageRig	= 5.0;
-	Goods[GOOD_GRAPES].DamageCrew	= 2.5;
+	Goods[GOOD_GRAPES].DamageCrew	= 3.0;
 	
 	Goods[GOOD_KNIPPELS].Name		= "Knippels";
 	Goods[GOOD_KNIPPELS].Cost		= 75;
@@ -32,8 +32,8 @@ void InitGoods()
 	Goods[GOOD_BOMBS].Weight		= 3;
 	Goods[GOOD_BOMBS].Units			= 20;
 	Goods[GOOD_BOMBS].SpeedV0		= 0.8;
-	Goods[GOOD_BOMBS].DamageHull	= 45.0;
-	Goods[GOOD_BOMBS].DamageRig		= 10.0;
+	Goods[GOOD_BOMBS].DamageHull	= 30.0;
+	Goods[GOOD_BOMBS].DamageRig		= 7.5;
 	Goods[GOOD_BOMBS].DamageCrew	= 1.5;
 
 	Goods[GOOD_SAILCLOTH].Name		= "Sailcloth";

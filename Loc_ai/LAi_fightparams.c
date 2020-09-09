@@ -304,7 +304,7 @@ void LAi_ApplyCharacterBladeDamage(aref attack, aref enemy, float attackDmg, flo
 				{
 					//critical = 20.0 + stf(enemy.rank)*1.5;
 				    //KE: double the damage 5% chance
-                    critical = 2.0;
+                    critical = 2.5;
 				}
 			}
 		}
