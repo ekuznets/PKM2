@@ -9,54 +9,60 @@ bool LEnc_MonstersLoginStart(ref location)
 	LEnc_MonstersLoginObject.type = "dungeon";
 	if(CheckAttribute(location, "type"))
 	{
-		if(location.type == "jungle")
+		if(location.type == "jungle" || location.type == "town_exit" || location.type == "seashore" || location.type == "canyon")
 		{
 			LEnc_MonstersLoginObject.type = "jungle";
 		}
 	}
 	LEnc_MonstersLoginObject.current = "";
+
+    // KE: Load Jungle
 	if(LEnc_MonstersLoginObject.type == "jungle")
 	{
+        Log_SetStringToLog("Загрузить монстров из Джунглей");
 		if(IsDay())
 		{
 			//Днём либо бандиты, либо олухи, либо никто
 			if(rand(100) > 20)
 			{
-				if(rand(100) < 30)
-				{
-					//Выбрали олухов
-					LEnc_MonstersLoginObject.bandit = "0";
-					LEnc_MonstersLoginObject.skeleton = "0";
-					LEnc_MonstersLoginObject.monkey = "0";
-					LEnc_MonstersLoginObject.mummy = "0";
-					LEnc_MonstersLoginObject.vagabond = "1";
-				}else{
-					return false;
-				}
-			}else{
-				LEnc_MonstersLoginObject.bandit = "1";
-				LEnc_MonstersLoginObject.skeleton = "0";
-				LEnc_MonstersLoginObject.monkey = "0";
-				LEnc_MonstersLoginObject.mummy = "0";
-				LEnc_MonstersLoginObject.vagabond = "0";
-			}
-		}else{
+                if(rand(100) < 20)
+                {
+                    //Выбрали олухов
+                    LEnc_MonstersLoginObject.bandit = "0";
+                    LEnc_MonstersLoginObject.skeleton = "0";
+                    LEnc_MonstersLoginObject.monkey = "0";
+                    LEnc_MonstersLoginObject.mummy = "0";
+                    LEnc_MonstersLoginObject.vagabond = "1";
+
+                }
+                else
+                {
+                    LEnc_MonstersLoginObject.bandit = "1";
+                    LEnc_MonstersLoginObject.skeleton = "0";
+                    LEnc_MonstersLoginObject.monkey = "0";
+                    LEnc_MonstersLoginObject.mummy = "0";
+                    LEnc_MonstersLoginObject.vagabond = "0";
+                }
+            }
+		}
+		else
+		{
 			//Ночью либо бандиты, либо скелеты, либо олухи, либо никто
-			if(rand(100) < 40)
+			if(rand(100) > 20)
 			{
-				if(rand(100) < 20)
-				{
-					//Выбрали олухов
-					LEnc_MonstersLoginObject.bandit = "0";
-					LEnc_MonstersLoginObject.skeleton = "0";
-					LEnc_MonstersLoginObject.monkey = "0";
-					LEnc_MonstersLoginObject.mummy = "0";
-					LEnc_MonstersLoginObject.vagabond = "1";
-				}else{
-					return false;
-				}
-			}else{
-				if(rand(100) < 40)
+                if (rand(100) < 20)
+                {
+                    //Выбрали олухов
+                    LEnc_MonstersLoginObject.bandit = "0";
+                    LEnc_MonstersLoginObject.skeleton = "0";
+                    LEnc_MonstersLoginObject.monkey = "0";
+                    LEnc_MonstersLoginObject.mummy = "0";
+                    LEnc_MonstersLoginObject.vagabond = "1";
+                }
+            }
+			else
+			{
+				if(rand(100) > 50)
 				{
 					//Выбрали бандитов
 					LEnc_MonstersLoginObject.bandit = "1";
@@ -64,41 +70,49 @@ bool LEnc_MonstersLoginStart(ref location)
 					LEnc_MonstersLoginObject.monkey = "0";
 					LEnc_MonstersLoginObject.mummy = "0";
 					LEnc_MonstersLoginObject.vagabond = "0";
-				}else{
+				}
+				else
+				{
 					//Выбрали скелетов
 					LEnc_MonstersLoginObject.bandit = "0";
-					monkeys = 0.4 + (rand(100)*0.01)*0.6;
-					skeletons = 1.0 - monkeys;
+					monkeys = 0.3;
+					skeletons = 1.0 - monkeys - 0.3;
 					LEnc_MonstersLoginObject.skeleton = skeletons;
 					LEnc_MonstersLoginObject.monkey = monkeys;
-					LEnc_MonstersLoginObject.mummy = "0";
+					LEnc_MonstersLoginObject.mummy = "0.3";
 					LEnc_MonstersLoginObject.vagabond = "0";
 				}
 			}
 		}
-	}else{
+	}
+	else
+    {
 		if(LEnc_MonstersLoginObject.type == "inca_temple")
 		{
+                Log_SetStringToLog("Загрузить монстров из Храма");
 				LEnc_MonstersLoginObject.bandit = "0";
 				LEnc_MonstersLoginObject.skeleton = "0.2";
 				LEnc_MonstersLoginObject.monkey = "0.3";
 				LEnc_MonstersLoginObject.mummy = "0.5";
 				LEnc_MonstersLoginObject.vagabond = "0";
-		}else{
-			if(rand(100) < 90)
+		}
+		else
+		{
+            Log_SetStringToLog("Загрузить монстров из Катакомб");
+			if(rand(100) < 50)
 			{
 				LEnc_MonstersLoginObject.bandit = "0";
 				LEnc_MonstersLoginObject.skeleton = "1";
 				LEnc_MonstersLoginObject.monkey = "0";
 				LEnc_MonstersLoginObject.mummy = "0";
 				LEnc_MonstersLoginObject.vagabond = "0";
-			}else{
-				skeletons = 0.8 + (rand(100)*0.01)*0.2;
-				monkeys = 1.0 - skeletons;
+			}
+			else
+			{
 				LEnc_MonstersLoginObject.bandit = "0";
-				LEnc_MonstersLoginObject.skeleton = skeletons;
-				LEnc_MonstersLoginObject.monkey = monkeys;
-				LEnc_MonstersLoginObject.mummy = "0";
+				LEnc_MonstersLoginObject.skeleton = "0.4";
+				LEnc_MonstersLoginObject.monkey = "0.2";
+				LEnc_MonstersLoginObject.mummy = "0.4";
 				LEnc_MonstersLoginObject.vagabond = "0";
 			}
 		}

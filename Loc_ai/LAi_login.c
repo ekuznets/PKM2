@@ -1,6 +1,6 @@
 
 
-int LAi_loginedcharacters[32];
+int LAi_loginedcharacters[64];
 int LAi_numloginedcharacters = 0;
 
 
@@ -84,9 +84,9 @@ bool LAi_CharacterLogin(aref chr, string locID)
 	}
 	if(!isLogin) return false;
 	//Если персонажей больше максимального числа, незагружаем больше
-	if(LAi_numloginedcharacters >= 32)
+	if(LAi_numloginedcharacters >= 64)
 	{
-		Trace("LAi_CharacterLogin -> many logined characters in location (>32)");
+		Trace("LAi_CharacterLogin -> many logined characters in location (>64)");
 		return false;
 	}
 	//Устанавливаем необходимые поля, если надо
@@ -203,10 +203,13 @@ void LAi_CharacterPostLogin(ref location)
 	}
 	if(!actLoadFlag)
 	{
+	    // KE: If I set monsters and Encounters then there be no officers in the tavern.
+	    // I really do not know how to make it work as of now, so I will come back to fixing this
 		//Расставляем квестовых энкоунтеров
 		if(!LAi_CreateEncounters(location))
 		{
 			//Расставляем монстров
+            //LAi_CreateEncounters(location)
 			LAi_CreateMonsters(location);
 		}
 	}

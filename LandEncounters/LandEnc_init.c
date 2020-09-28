@@ -111,16 +111,16 @@ int InitLandEncTemplates()
 //---------------------------------------------------------------------------------------------
 
 	LandEncTemplate[n].id = "jungle";
-	LandEncTemplate[n].quantity = 1;
+	LandEncTemplate[n].quantity = 2;
 
 
 	LandEncTemplate[n].enc1.type = "ENC_RAIDERS";
-	LandEncTemplate[n].enc1.chance = 0.2;
+	LandEncTemplate[n].enc1.chance = 0.4;
 	LandEncTemplate[n].enc1.StartTime = 0;
 	LandEncTemplate[n].enc1.EndTime = 24;
 
 	LandEncTemplate[n].enc2.type = "ENC_RAPERS";
-	LandEncTemplate[n].enc2.chance = 0.1;
+	LandEncTemplate[n].enc2.chance = 0.4;
 	LandEncTemplate[n].enc2.StartTime = 0;
 	LandEncTemplate[n].enc2.EndTime = 24;
 
@@ -152,10 +152,10 @@ int InitLandEncTemplates()
 //---------------------------------------------------------------------------------------------
 
 	LandEncTemplate[n].id = "tavern";
-	LandEncTemplate[n].quantity = 1;
+	LandEncTemplate[n].quantity = 2;
 
 	LandEncTemplate[n].enc1.type = "ENC_OFFICER";
-	LandEncTemplate[n].enc1.chance = 0.2;
+	LandEncTemplate[n].enc1.chance = 0.4;
 	LandEncTemplate[n].enc1.StartTime = 0;
 	LandEncTemplate[n].enc1.EndTime = 24;
 

@@ -13,7 +13,7 @@ void LAi_CreateMonsters(ref location)
 	string group = "locators." + LAi_monsters_group;
 	if(CheckAttribute(location, group) == 0) return;
 	//Максимально возможное количество монстров
-	int maxMonsters = 20 - LAi_numloginedcharacters;
+	int maxMonsters = 32 - LAi_numloginedcharacters;
 	if(maxMonsters <= 0) return;
 	//Перебераем локаторы, выбирая свободные
 	aref grp;
@@ -199,7 +199,7 @@ bool LAi_CreateEncounters(ref location)
 	}
 	if(num <= 0) return retValue;
 	//Максимально возможное количество персонажей в энкоунтере
-	int maxChr = 16 - LAi_numloginedcharacters;
+	int maxChr = 32 - LAi_numloginedcharacters;
 	if(maxChr <= 0) return retValue;
 	if(maxChr > num) maxChr = num;
 	//Есть группа пробуем завести энкоунтеров
