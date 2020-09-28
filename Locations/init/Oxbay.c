@@ -197,10 +197,13 @@ int LocationInitOxbay(int n)
 	Locations[n].townsack = "Oxbay";
 
 	//Sound
-	locations[n].type = "jungle";
-//	locations[n].fastreload = "Oxbay";
+	locations[n].type = "town_exit";
+	//locations[n].fastreload = "Oxbay";
+
+	// eugene
+    Locations[n].monsters = "1";
 	LAi_LocationMonstersGen(&locations[n], true);
-	LAi_LocationSetMonstersTime(&locations[n], 22, 6);
+	LAi_LocationSetMonstersTime(&locations[n], 0, 24);
 
 	//Models
 	//Always
@@ -805,6 +808,11 @@ int LocationInitOxbay(int n)
 	Locations[n].reload.l3.label = "Море.";
 	Locations[n].locators_radius.reload.boat = 9.0;
 
+    //KE: temp change
+    Locations[n].monsters = "1";
+    LAi_LocationMonstersGen(&locations[n], true);
+    LAi_LocationSetMonstersTime(&locations[n], 0, 24);
+
 	n = n + 1;
 
 
@@ -898,7 +906,7 @@ int LocationInitOxbay(int n)
 	//Sound
 	locations[n].type = "jungle";
 	LAi_LocationMonstersGen(&locations[n], true);
-	LAi_LocationSetMonstersTime(&locations[n], 22, 6);
+	LAi_LocationSetMonstersTime(&locations[n], 0, 24);
 
 	//Models
 	//Always
@@ -1094,6 +1102,11 @@ int LocationInitOxbay(int n)
 	Locations[n].reload.l2.autoreload = "0";
 	Locations[n].reload.l2.label = "Море.";
 	Locations[n].locators_radius.reload.boat = 9.0;
+
+    //KE: temp change
+    Locations[n].monsters = "1";
+    LAi_LocationMonstersGen(&locations[n], true);
+    LAi_LocationSetMonstersTime(&locations[n], 0, 24);
 
 	n = n + 1;
 
@@ -1302,6 +1315,11 @@ int LocationInitOxbay(int n)
 	Locations[n].reload.l16.autoreload = "0";
 	Locations[n].reload.l16.label = "House.";
 
+    //KE: temp change
+    Locations[n].monsters = "1";
+    LAi_LocationMonstersGen(&locations[n], true);
+    LAi_LocationSetMonstersTime(&locations[n], 0, 24);
+
 //Hitman
 
 	Locations[n].reload.l5.name = "reload5";
@@ -1326,10 +1344,12 @@ int LocationInitOxbay(int n)
 	Locations[n].townsack = "Greenford";
 
 	//Sound
-	locations[n].type = "jungle";
-//	locations[n].fastreload = "Greenford";
-	LAi_LocationMonstersGen(&locations[n], true);
-	LAi_LocationSetMonstersTime(&locations[n], 22, 6);
+	locations[n].type = "town_exit";
+	// eugene
+	//locations[n].fastreload = "Greenford";
+    Locations[n].monsters = "1";
+    LAi_LocationMonstersGen(&locations[n], true);
+    LAi_LocationSetMonstersTime(&locations[n], 0, 24);
 
 	//Models
 	//Always
@@ -1868,6 +1888,11 @@ int LocationInitOxbay(int n)
 	Locations[n].reload.l4.autoreload = "0";
 	Locations[n].reload.l4.label = "Mines Office.";
 
+    //KE: temp change
+    Locations[n].monsters = "1";
+    LAi_LocationMonstersGen(&locations[n], true);
+    LAi_LocationSetMonstersTime(&locations[n], 0, 24);
+
 	n = n + 1;
 
 	// -------------------------------------------------
@@ -1931,6 +1956,11 @@ int LocationInitOxbay(int n)
 	Locations[n].reload.l4.label = "Lighthouse Inside.";
 //	Locations[n].reload.l4.close_for_night = 1;
 	Locations[n].reload.l4.disable = 1;
+
+    //KE: temp change
+    Locations[n].monsters = "1";
+    LAi_LocationMonstersGen(&locations[n], true);
+    LAi_LocationSetMonstersTime(&locations[n], 0, 24);
 
 	n = n + 1;
 
@@ -2022,6 +2052,11 @@ int LocationInitOxbay(int n)
 	Locations[n].reload.l2.go = "Oxbay_Lighthouse";
 	Locations[n].reload.l2.emerge = "locator1";*/
 
+    //KE: temp change
+    Locations[n].monsters = "1";
+    LAi_LocationMonstersGen(&locations[n], true);
+    LAi_LocationSetMonstersTime(&locations[n], 0, 24);
+
 	n = n + 1;
 
 	// -------------------------------------------------
@@ -2035,7 +2070,7 @@ int LocationInitOxbay(int n)
 
 	//Sound
 	locations[n].type = "jail";
-	LAi_LocationFantomsGen(&locations[n], true);
+	LAi_LocationFantomsGen(&locations[n], false);
 	//locations[n].fastreload = "Greenford";
 
 	Locations[n].locators_radius.camdetector.camera13 = 2.5;//Mosh
@@ -2212,6 +2247,7 @@ int LocationInitOxbay(int n)
 	Locations[n].filespath.models = "locations\Inside\Dungeon_1";
 	Locations[n].id = "Dungeon 1";
 	Locations[n].image = "loading\Dungeon 01.tga";
+    locations[n].id.label = "Катакомбы";
 	Locations[n].monsters = "1";
 
 	//Town sack
@@ -2259,8 +2295,9 @@ int LocationInitOxbay(int n)
 	// -----------------Mosh D24--------------------
 	Locations[n].filespath.models = "locations\Inside\Dungeon_3";
 	Locations[n].id = "Oxbay_cave";
+    locations[n].id.label = "Пещера Оксбея";
 	Locations[n].image = "loading\Dungeon 03.tga";
-//	Locations[n].monsters = "1";
+	Locations[n].monsters = "1";
 
 	//Sound
 	locations[n].type = "Dungeon";
@@ -2279,11 +2316,14 @@ int LocationInitOxbay(int n)
 
 	//Reload map
 	Locations[n].reload.l1.name = "reload1";
-	Locations[n].reload.l1.go = "Oxbay_cave_exit";//Mosh
+	//KE: teleport to Redmond
+	//Locations[n].reload.l1.go = "Oxbay_cave_exit"; //Mosh
+    Locations[n].reload.l1.go = "Redmond_residence";
 	Locations[n].reload.l1.emerge = "reload1";
 
-	LAi_LocationMonstersGen(&locations[n], false);
+	LAi_LocationMonstersGen(&locations[n], true);
 	LAi_LocationSetMonstersTime(&locations[n], 0, 24);
+    //LAi_LocationFantomsGen(&locations[n], true);
 
 	Locations[n].items.randitem1 = "blade21";
 

@@ -1796,7 +1796,10 @@ int LocationInitRedmond(int n)
 	Locations[n].monsters = 1;
 	//Reload map
 	Locations[n].reload.l1.name = "reload1";
-	Locations[n].reload.l1.go = "Redmond_Town_03";
+	// KE: temp change to restore location
+	// Eugene
+	//Locations[n].reload.l1.go = "Redmond_Town_03";
+    Locations[n].reload.l1.go = "Greenford_church";
 	Locations[n].reload.l1.emerge = "door_12";
 	Locations[n].reload.l1.autoreload = "0";
 	Locations[n].reload.l1.label = "Redmond.";
